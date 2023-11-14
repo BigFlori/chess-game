@@ -4,6 +4,7 @@ const gameBoard = document.getElementById("game-board");
 const checkInfo = document.getElementById("check-info");
 const turnText = document.getElementById("turn-text");
 let turn = "none";
+let checkmate = false;
 
 document.getElementById("new-game").addEventListener("click", () => resetGame());
 
@@ -117,6 +118,9 @@ const gameboardMovePiece = (fromCellDiv, toCellDiv) => {
 //Ha a mezőn van bábu, akkor a bábu kijelölése
 //Ha a kijelölt bábu mezőjére kattintunk, akkor a kijelölés törlődik
 const gameboardCellClick = (clickedCellDiv) => {
+  if (checkmate) {
+    return;
+  }
   if (clickedCellDiv.classList.contains("available")) {
     // Van kijelölt bábu, és a kattintott mező available
     // Tehát lépés
@@ -137,6 +141,8 @@ const gameboardCellClick = (clickedCellDiv) => {
       const kingCoords = findKing(board, turn);
       const king = board[kingCoords[0]][kingCoords[1]];
       if (king.isCheckmate(board, turn)) {
+        checkmate = true;
+        setTurn("end");
         getBoardDivByCoords(kingCoords[0], kingCoords[1]).classList.add("checkmate");
         checkInfo.innerHTML = "SAKK-MATT!";
       } else {
@@ -251,7 +257,20 @@ export const distanceBetweenKings = (board) => {
 
 const setTurn = (color) => {
   turn = color;
-  turnText.innerHTML = turn === "white" ? "Fehér" : "Fekete";
+  switch(turn) {
+    case "white":
+      turnText.innerHTML = "Fehér játékos következik!";
+      return;
+    case "black":
+      turnText.innerHTML = "Fekete játékos következik!";
+      return;
+    case "end":
+      turnText.innerHTML = "Vége a játéknak!";
+      return;
+    default:
+      turnText.innerHTML = "Nincs játék...";
+      return;
+  }
 };
 
 const resetGame = () => {
