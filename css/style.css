@@ -13,7 +13,7 @@ body {
   color: #e6f6ff;
   margin: 0;
   padding: 0;
-  background-image: url("/assets/chess-bg.png");
+  background-image: url("../assets/chess-bg.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
