@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakk - Webprog</title>
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game">
+        <div id="game-controls">
+            <button class="btn" id="new-game" role="button">Új játék indítása!</button>
+        </div>
+        <div class="row-space-between">
+            <h3><span id="turn-text"></span> játékos következik!</h3>
+            <h3 id="check-info"></h3>
+        </div>
+        <div id="game-board"></div>
+    </div>
+
+    <script type="module" src="js/board.js"></script>
+</body>
+</html>

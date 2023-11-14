@@ -1,0 +1,62 @@
+#game-board {
+    border: 1px solid black;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.row:nth-child(even) > div:nth-child(even) {
+  background-color: #f0d9b5;
+}
+
+.row:nth-child(even) > div:nth-child(odd) {
+  background-color: #b58863;
+}
+
+.row:nth-child(odd) > div:nth-child(even) {
+  background-color: #b58863;
+}
+
+.row:nth-child(odd) > div:nth-child(odd) {
+  background-color: #f0d9b5;
+}
+
+.row {
+  display: flex;
+}
+.row > div {
+  width: 64px;
+  height: 64px;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.selected {
+  background-color: #5cc019 !important;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #5cc0199c;
+  margin: 0 auto;
+  position: absolute;
+}
+
+.available {
+  cursor: pointer;
+}
+
+.check {
+  background-color: #b03e3e !important;
+}
+
+.checkmate {
+  background-color: #9e1111 !important;
+}
+
