@@ -257,7 +257,7 @@ class Piece {
 
   loadSvg() {
     // SVG betöltése
-    const svgPath = `${window.location.origin}/client/assets/${this.color}-${this.type}.svg`;
+    const svgPath = `${window.location.origin}/assets/${this.color}-${this.type}.svg`;
     const loader = new SVGLoader(svgPath);
     return loader.loadSVG();
   }
