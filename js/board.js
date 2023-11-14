@@ -283,6 +283,7 @@ const resetGame = () => {
   generateGameboard(board);
   setTurn("white");
   checkInfo.innerHTML = "";
+  checkmate = false;
 }
 
 const startGame = () => {
