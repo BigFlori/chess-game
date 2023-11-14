@@ -13,11 +13,6 @@ body {
   color: #e6f6ff;
   margin: 0;
   padding: 0;
-  background-image: url("../assets/chess-bg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -37,6 +32,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#bg-image {
+  background-image: url("../assets/chess-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
 #overlay {
