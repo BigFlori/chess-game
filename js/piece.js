@@ -23,7 +23,7 @@ class Piece {
     const direction = this.color === "white" ? -1 : 1;
     const nextRow = row + direction;
 
-    if(!board[nextRow]) {
+    if (!board[nextRow]) {
       return moves;
     }
 
@@ -258,7 +258,8 @@ class Piece {
 
   loadSvg() {
     // SVG betöltése
-    const svgPath = `${window.location.origin}/${window.location.pathname}/assets/${this.color}-${this.type}.svg`;
+    const absPath = document.location.origin + document.location.pathname.replace(/\/index\.html$/, "");
+    const svgPath = `${absPath}/assets/${this.color}-${this.type}.svg`;
     const loader = new SVGLoader(svgPath);
     return loader.loadSVG();
   }
