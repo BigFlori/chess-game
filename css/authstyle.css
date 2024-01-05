@@ -1,0 +1,22 @@
+.g-6 {
+    --bs-gutter-y: 10rem;
+    --bs-gutter-x: 10rem;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  .form-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 25rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-info {
+    font-size: 0.75rem;
+    color: #6c757d;
+  }
+  

@@ -258,7 +258,7 @@ class Piece {
 
   loadSvg() {
     // SVG betöltése
-    const absPath = document.location.origin + document.location.pathname.replace(/\/index\.html$/, "");
+    const absPath = document.location.origin + document.location.pathname.replace(/\/index\.php$/, "");
     const svgPath = `${absPath}/assets/${this.color}-${this.type}.svg`;
     const loader = new SVGLoader(svgPath);
     return loader.loadSVG();

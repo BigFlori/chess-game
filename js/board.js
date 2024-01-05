@@ -8,7 +8,6 @@ let checkmate = false;
 
 document.getElementById("new-game").addEventListener("click", () => resetGame());
 
-
 export const board = [
   // A  B  C  D  E  F  G  H
   [0, 0, 0, 0, 0, 0, 0, 0], // row 0
@@ -117,6 +116,7 @@ const gameboardMovePiece = (fromCellDiv, toCellDiv) => {
 //Ha a mezőn nincs bábu, akkor nem történik semmi
 //Ha a mezőn van bábu, akkor a bábu kijelölése
 //Ha a kijelölt bábu mezőjére kattintunk, akkor a kijelölés törlődik
+
 const gameboardCellClick = (clickedCellDiv) => {
   if (checkmate) {
     return;
@@ -134,8 +134,10 @@ const gameboardCellClick = (clickedCellDiv) => {
 
     const selectedPieceDiv = gameBoard.querySelector(".selected");
     const selectedPiece = getBoardPieceById(selectedPieceDiv.id);
+
     selectedPiece.move(board, selectedPieceDiv, clickedCellDiv);
     gameboardMovePiece(selectedPieceDiv, clickedCellDiv);
+
     setTurn(turn === "white" ? "black" : "white");
     if (isInCheck(board, turn)) {
       const kingCoords = findKing(board, turn);

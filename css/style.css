@@ -44,13 +44,14 @@ body {
 
 #overlay {
   background-color: rgba(0, 0, 0, 0.781);
-  height: 100vh;
-  padding-top: 5%;
+  height: 100svh;
+  padding-top: 1rem;
 }
 
 .row-space-between {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
 }
 
 .btn {
